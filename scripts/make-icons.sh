@@ -10,8 +10,9 @@ PDF=overrides/lib/pdf_icons
 FONT="${FONT:-Arial-Bold}"
 mkdir -p "$PUB" "$PDF"
 
+# 8-bit RGBA output: the PDF library (HexaPDF) draws 16-bit PNGs washed out.
 render() { # size output
-  magick -background none -density 600 "$MARK" -resize "$1x$1" "$2"
+  magick -background none -density 600 "$MARK" -resize "$1x$1" -depth 8 "PNG32:$2"
 }
 
 cp "$MARK" "$PUB/favicon.svg"
@@ -26,11 +27,11 @@ magick -background none -density 600 "$MARK" -define icon:auto-resize=48,32,16 "
 magick -size 800x800 xc:'#FBFAF3' \
   \( -background none -density 600 "$MARK" -resize 360x360 \) -gravity center -geometry +0-70 -composite \
   -density 72 -font "$FONT" -pointsize 76 -fill '#111111' -gravity center -annotate +0+220 'Daverson Hall' \
-  "$PUB/preview.png"
+  -depth 8 "PNG24:$PUB/preview.png"
 
 # PDF images: the audit-log header logo (300x300) and the stamp field's diagonal watermark (506x340).
 render 300 "$PDF/logo.png"
 magick -size 506x340 xc:none -font "$FONT" -pointsize 74 -fill '#707070' -gravity center \
-  -annotate -33x-33+0+0 'Daverson Hall' "$PDF/stamp-logo.png"
+  -annotate -33x-33+0+0 'Daverson Hall' -depth 8 "PNG32:$PDF/stamp-logo.png"
 
 echo "Icons written to $PUB and $PDF"
