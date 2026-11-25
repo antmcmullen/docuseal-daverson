@@ -1,0 +1,31 @@
+<%# Daverson Hall: replaces DocuSeal 3.3.8 app/views/pages/landing.html.erb, the page anonymous visitors see at /. Classes reused from the upstream page so the compiled CSS covers them. %>
+<section class="flex items-center justify-center">
+  <div class="py-10 mx-auto max-w-7xl">
+    <div class="max-w-xl mx-auto">
+      <div class="text-center">
+        <div class="relative flex flex-col items-center">
+          <%= render 'shared/logo', width: '100', height: '100' %>
+          <h1 class="font-bold mt-4 mb-4" style="font-size: clamp(2.25rem, 9vw, 3.75rem); line-height: 1.1">
+            Daverson Hall
+          </h1>
+        </div>
+        <h2 class="mt-4 mb-16 text-lg text-center text-gray-600">
+          Document signing
+        </h2>
+      </div>
+      <div class="card bg-base-200">
+        <div class="card-body">
+          <div class="text-center">
+            <p class="text-base text-gray-500">
+              If you've been asked to sign a document, please open the link in the email or text message we sent you.
+            </p>
+            <p class="text-base text-gray-500 mt-4">
+              Questions about your booking? Visit <a href="https://www.daversonhall.co.uk" class="link link-neutral font-bold">daversonhall.co.uk</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<%= render 'shared/attribution' %>

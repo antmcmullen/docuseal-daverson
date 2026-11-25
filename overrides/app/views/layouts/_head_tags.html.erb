@@ -1,0 +1,9 @@
+<%# Daverson Hall: replaces DocuSeal 3.3.8 app/views/layouts/_head_tags.html.erb. Only the fallback titles changed. %>
+<title>
+  <%= turbo_native_app? ? content_for(:native_title) : (content_for(:html_title) || (signed_in? ? 'Daverson Hall' : 'Daverson Hall | Document signing')) %>
+</title>
+<%= render 'shared/meta' %>
+<% if turbo_native_app? %>
+  <meta name="turbo-cache-control" content="no-preview">
+  <%= render 'layouts/native_styles' %>
+<% end %>

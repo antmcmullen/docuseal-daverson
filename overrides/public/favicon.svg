@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180" role="img" aria-label="Daverson Hall">
+  <rect width="180" height="180" rx="36" fill="#503AA8"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M40 74 L90 36 L140 74"/>
+    <path d="M48 90 V142 H58 A26 26 0 0 0 58 90 Z"/>
+    <path d="M101 90 V142 M131 90 V142 M101 116 H131"/>
+  </g>
+</svg>

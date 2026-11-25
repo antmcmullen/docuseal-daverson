@@ -1,0 +1,6 @@
+<%# Daverson Hall: replaces DocuSeal 3.3.8 app/views/shared/_powered_by.html.erb. Attribution kept word for word (LICENSE_ADDITIONAL_TERMS); counter dropped; source link added (AGPL section 13). %>
+<div class="text-center px-2">
+  <%= t('powered_by') %>
+  <a href="<%= Docuseal::PRODUCT_URL %><%= local_assigns[:link_path] %>" class="underline"><%= Docuseal.product_name %></a> - <%= t('open_source_documents_software') %>
+  · <a href="https://github.com/antmcmullen/docuseal-daverson" class="underline">Source</a>
+</div>
